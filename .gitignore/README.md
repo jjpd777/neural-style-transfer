@@ -1,1 +1,1 @@
-# Neural Style Transfer Library
+# Neural Style Transfer Project
