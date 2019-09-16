@@ -9,8 +9,8 @@ from keras.applications import VGG19
 SETTINGS = {
 	# initialize the path to the input (i.e., content) image,
 	# style image, and path to the output directory
-	"input_path": "inputs/jp.jpg",
-	"style_path": "inputs/mcescher.jpg",
+	"input_path": "tucan-content.jpg",
+	"style_path": "circuit-style.jpeg",
 	"output_path": "output",
 
 	# define the CNN to be used style transfer, along with the
