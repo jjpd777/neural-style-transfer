@@ -4,14 +4,19 @@
 # import the necessary packages
 from pyimagesearch.nn.conv import NeuralStyle
 from keras.applications import VGG19
+import os
 
+styles = ["circuit-1.jpg","circuit-2.jpg","circuit-3.jpg","circuit-4.jpg",
+		  "circuit-5.jpg","circuit-6.jpg","circuit-7.jpg"]
 # initialize the settings dictionary
+
+def create_styles(style_path,dst):
 SETTINGS = {
 	# initialize the path to the input (i.e., content) image,
 	# style image, and path to the output directory
-	"input_path": "tucan-content.jpg",
-	"style_path": "circuit-style.jpeg",
-	"output_path": "output",
+	"input_path": "guacamaya-content.jpg",
+	"style_path": style_path,
+	"output_path": dst,
 
 	# define the CNN to be used style transfer, along with the
 	# set of content layer and style layers, respectively
@@ -27,8 +32,15 @@ SETTINGS = {
 	"tv_weight": 10.0,
 
 	# number of iterations
-	"iterations": 50,
+	"iterations": 75,
 }
+
+for style in styles:
+	style_path = "circuits/"+style
+	name = style.split(".")[0]
+	output_dir = "output/"+name
+	os.makedir(dir_name)
+	create_styles(style_path,output_dir)
 
 # perform neural style transfer
 ns = NeuralStyle(SETTINGS)
